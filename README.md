@@ -1,2 +1,2 @@
-# integral
-C++ Integral Gaussian Quadrature Library
+# quadrature
+C++ Gaussian Quadrature Library

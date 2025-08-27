@@ -43,7 +43,7 @@ namespace quadrature
 	using GaussHexaPtr = std::shared_ptr<GaussHexa>;
 	using ConstGaussHexaPtr = std::shared_ptr<const GaussHexa>;
 
-	GaussHexaPtr CreateGaussHexa();
+	GaussHexaPtr CreateGaussHexa(const Quadrature& value);
 
 	class GaussHexa : public IGauss, public std::enable_shared_from_this<GaussHexa>
 	{
@@ -63,7 +63,6 @@ namespace quadrature
 
 	private:
 		GaussHexa();
-		GaussHexa(const Quadrature& value);
 
 		const Index& GetIndex() const override;
 		void SetPoints();
@@ -80,7 +79,7 @@ namespace quadrature
 	using GaussRectPtr = std::shared_ptr<GaussRect>;
 	using ConstGaussRectPtr = std::shared_ptr<const GaussRect>;
 
-	GaussRectPtr CreateGaussRect();
+	GaussRectPtr CreateGaussRect(const Quadrature& value);
 
 	class GaussRect : public IGauss, public std::enable_shared_from_this<GaussRect>
 	{
@@ -100,7 +99,6 @@ namespace quadrature
 
 	private:
 		GaussRect();
-		GaussRect(const Quadrature& value);
 
 		const Index& GetIndex() const override;
 		void SetPoints();
@@ -117,7 +115,7 @@ namespace quadrature
 	using GaussLinePtr = std::shared_ptr<GaussLine>;
 	using ConstGaussLinePtr = std::shared_ptr<const GaussLine>;
 
-	GaussLinePtr CreateGaussLine();
+	GaussLinePtr CreateGaussLine(const Quadrature& value);
 
 	class GaussLine : public IGauss, public std::enable_shared_from_this<GaussLine>
 	{
@@ -137,7 +135,6 @@ namespace quadrature
 
 	private:
 		GaussLine();
-		GaussLine(const Quadrature& value);
 
 		const Index& GetIndex() const override;
 		void SetPoints();

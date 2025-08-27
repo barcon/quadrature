@@ -2,9 +2,11 @@
 
 namespace quadrature
 {
-	GaussHexaPtr CreateGaussHexa()
+	GaussHexaPtr CreateGaussHexa(const Quadrature& value)
 	{
 		auto res = GaussHexa::Create();
+
+		res->SetQuadrature(value);
 
 		return res;
 	}
@@ -29,10 +31,6 @@ namespace quadrature
 	GaussHexa::GaussHexa()
 	{
 		SetQuadrature(quadrature_);
-	}
-	GaussHexa::GaussHexa(const Quadrature& value)
-	{
-		SetQuadrature(value);
 	}
 	const Index& GaussHexa::GetIndex() const
 	{
@@ -109,9 +107,11 @@ namespace quadrature
 		}
 	}
 
-	GaussRectPtr CreateGaussRect()
+	GaussRectPtr CreateGaussRect(const Quadrature& value)
 	{
 		auto res = GaussRect::Create();
+
+		res->SetQuadrature(value);
 
 		return res;
 	}
@@ -136,10 +136,6 @@ namespace quadrature
 	GaussRect::GaussRect()
 	{
 		SetQuadrature(quadrature_);
-	}
-	GaussRect::GaussRect(const Quadrature& value)
-	{
-		SetQuadrature(value);
 	}
 	const Index& GaussRect::GetIndex() const
 	{
@@ -212,9 +208,11 @@ namespace quadrature
 		}
 	}
 
-	GaussLinePtr CreateGaussLine()
+	GaussLinePtr CreateGaussLine(const Quadrature& value)
 	{
 		auto res = GaussLine::Create();
+
+		res->SetQuadrature(value);
 
 		return res;
 	}
@@ -239,10 +237,6 @@ namespace quadrature
 	GaussLine::GaussLine()
 	{
 		SetQuadrature(quadrature_);
-	}
-	GaussLine::GaussLine(const Quadrature& value)
-	{
-		SetQuadrature(value);
 	}
 	const Index& GaussLine::GetIndex() const
 	{

@@ -63,6 +63,7 @@ namespace quadrature
 
 	private:
 		GaussHexa();
+		GaussHexa(const Quadrature& value);
 
 		const Index& GetIndex() const override;
 		void SetPoints();
@@ -99,6 +100,7 @@ namespace quadrature
 
 	private:
 		GaussRect();
+		GaussRect(const Quadrature& value);
 
 		const Index& GetIndex() const override;
 		void SetPoints();
@@ -135,6 +137,7 @@ namespace quadrature
 
 	private:
 		GaussLine();
+		GaussLine(const Quadrature& value);
 
 		const Index& GetIndex() const override;
 		void SetPoints();

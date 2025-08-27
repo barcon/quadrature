@@ -30,6 +30,10 @@ namespace quadrature
 	{
 		SetQuadrature(quadrature_);
 	}
+	GaussHexa::GaussHexa(const Quadrature& value)
+	{
+		SetQuadrature(value);
+	}
 	const Index& GaussHexa::GetIndex() const
 	{
 		return index_;
@@ -133,6 +137,10 @@ namespace quadrature
 	{
 		SetQuadrature(quadrature_);
 	}
+	GaussRect::GaussRect(const Quadrature& value)
+	{
+		SetQuadrature(value);
+	}
 	const Index& GaussRect::GetIndex() const
 	{
 		return index_;
@@ -231,6 +239,10 @@ namespace quadrature
 	GaussLine::GaussLine()
 	{
 		SetQuadrature(quadrature_);
+	}
+	GaussLine::GaussLine(const Quadrature& value)
+	{
+		SetQuadrature(value);
 	}
 	const Index& GaussLine::GetIndex() const
 	{

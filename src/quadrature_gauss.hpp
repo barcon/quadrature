@@ -5,9 +5,6 @@
 
 namespace quadrature
 {
-	using Counter = std::size_t;
-	using Quadrature = std::size_t;
-
 	static const Scalar GaussTable[10][2] ={{ 0.000000000000000, 2.000000000000000},
 											{-0.577350269189626, 1.000000000000000},
 											{ 0.577350269189626, 1.000000000000000},

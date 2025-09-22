@@ -57,7 +57,7 @@ namespace quadrature
 		switch (value)
 		{
 		case 1:
-			quadrature_ = 1;
+			quadrature_ = quadrature_one;
 			index_ = 0;
 			break;
 		case 2:

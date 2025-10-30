@@ -16,6 +16,10 @@ namespace quadrature
 											{ 0.339981043584856, 0.652145154862546},
 											{ 0.861136311594053, 0.347854845137454} };
 
+	class IGauss;
+	using IGaussPtr = std::shared_ptr<IGauss>;
+	using ConstIGaussPtr = std::shared_ptr<const IGauss>;
+
 	class IGauss
 	{
 	public:
@@ -32,22 +36,31 @@ namespace quadrature
 		virtual const Index& GetIndex() const = 0;
 	};
 
-	class GaussHexa : public IGauss
+	class GaussHexa;
+	using GaussHexaPtr = std::shared_ptr<GaussHexa>;
+	using ConstGaussHexaPtr = std::shared_ptr<const GaussHexa>;
+
+	GaussHexaPtr CreateGaussHexa(const Quadrature& value);
+
+	class GaussHexa : public IGauss, public std::enable_shared_from_this<GaussHexa>
 	{
 	public:
-		GaussHexa();
-		GaussHexa(const Quadrature& quadrature);
-
 		~GaussHexa() = default;
 
+		static GaussHexaPtr Create();
+		GaussHexaPtr GetPtr();
+		ConstGaussHexaPtr GetPtr() const;
+
 		const Points& GetPoints() const override;
 		const Weights& GetWeights() const override;
 		const Counter& GetCounter() const override;
 		const Quadrature& GetQuadrature() const override;
 
-		void SetQuadrature(const Quadrature& quadrature) override;
+		void SetQuadrature(const Quadrature& value) override;
 
 	private:
+		GaussHexa();
+
 		const Index& GetIndex() const override;
 		void SetPoints();
 
@@ -59,22 +72,31 @@ namespace quadrature
 	};
 
 	//-----------------------------------------------------------------------------
-	class GaussRect : public IGauss
+	class GaussRect;
+	using GaussRectPtr = std::shared_ptr<GaussRect>;
+	using ConstGaussRectPtr = std::shared_ptr<const GaussRect>;
+
+	GaussRectPtr CreateGaussRect(const Quadrature& value);
+
+	class GaussRect : public IGauss, public std::enable_shared_from_this<GaussRect>
 	{
 	public:
-		GaussRect();
-		GaussRect(const Quadrature& quadrature);
-
 		~GaussRect() = default;
+
+		static GaussRectPtr Create();
+		GaussRectPtr GetPtr();
+		ConstGaussRectPtr GetPtr() const;
 
 		const Points& GetPoints() const override;
 		const Weights& GetWeights() const override;
 		const Counter& GetCounter() const override;
 		const Quadrature& GetQuadrature() const override;
 
-		void SetQuadrature(const Quadrature& quadrature) override;
+		void SetQuadrature(const Quadrature& value) override;
 
 	private:
+		GaussRect();
+
 		const Index& GetIndex() const override;
 		void SetPoints();
 
@@ -86,22 +108,31 @@ namespace quadrature
 	};
 
 	//-----------------------------------------------------------------------------
+	class GaussLine;
+	using GaussLinePtr = std::shared_ptr<GaussLine>;
+	using ConstGaussLinePtr = std::shared_ptr<const GaussLine>;
+
+	GaussLinePtr CreateGaussLine(const Quadrature& value);
+
 	class GaussLine : public IGauss, public std::enable_shared_from_this<GaussLine>
 	{
 	public:
-		GaussLine();
-		GaussLine(const Quadrature& quadrature);
-
 		~GaussLine() = default;
+
+		static GaussLinePtr Create();
+		GaussLinePtr GetPtr();
+		ConstGaussLinePtr GetPtr() const;
 
 		const Points& GetPoints() const override;
 		const Weights& GetWeights() const override;
 		const Counter& GetCounter() const override;
 		const Quadrature& GetQuadrature() const override;
 
-		void SetQuadrature(const Quadrature& quadrature) override;
+		void SetQuadrature(const Quadrature& value) override;
 
 	private:
+		GaussLine();
+
 		const Index& GetIndex() const override;
 		void SetPoints();
 

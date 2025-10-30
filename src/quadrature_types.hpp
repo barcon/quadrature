@@ -2,7 +2,6 @@
 #define QUADRATURE_TYPES_HPP_
 
 #include "eilig.hpp"
-#include <memory>
 
 namespace quadrature
 {

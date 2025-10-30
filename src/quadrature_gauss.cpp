@@ -2,35 +2,13 @@
 
 namespace quadrature
 {
-	GaussHexaPtr CreateGaussHexa(const Quadrature& value)
-	{
-		auto res = GaussHexa::Create();
-
-		res->SetQuadrature(value);
-
-		return res;
-	}
-	GaussHexaPtr GaussHexa::Create()
-	{
-		class MakeSharedEnabler : public GaussHexa
-		{
-		};
-
-		auto res = std::make_shared<MakeSharedEnabler>();
-
-		return res;
-	}
-	GaussHexaPtr GaussHexa::GetPtr()
-	{
-		return this->shared_from_this();
-	}
-	ConstGaussHexaPtr GaussHexa::GetPtr() const
-	{
-		return const_cast<GaussHexa*>(this)->GetPtr();
-	}
 	GaussHexa::GaussHexa()
 	{
 		SetQuadrature(quadrature_);
+	}
+	GaussHexa::GaussHexa(const Quadrature& quadrature)
+	{
+		SetQuadrature(quadrature);
 	}
 	const Index& GaussHexa::GetIndex() const
 	{
@@ -52,9 +30,9 @@ namespace quadrature
 	{
 		return quadrature_;
 	}
-	void GaussHexa::SetQuadrature(const Quadrature& value)
+	void GaussHexa::SetQuadrature(const Quadrature& quadrature)
 	{
-		switch (value)
+		switch (quadrature)
 		{
 		case 1:
 			quadrature_ = quadrature_one;
@@ -107,35 +85,13 @@ namespace quadrature
 		}
 	}
 
-	GaussRectPtr CreateGaussRect(const Quadrature& value)
-	{
-		auto res = GaussRect::Create();
-
-		res->SetQuadrature(value);
-
-		return res;
-	}
-	GaussRectPtr GaussRect::Create()
-	{
-		class MakeSharedEnabler : public GaussRect
-		{
-		};
-
-		auto res = std::make_shared<MakeSharedEnabler>();
-
-		return res;
-	}
-	GaussRectPtr GaussRect::GetPtr()
-	{
-		return this->shared_from_this();
-	}
-	ConstGaussRectPtr GaussRect::GetPtr() const
-	{
-		return const_cast<GaussRect*>(this)->GetPtr();
-	}
 	GaussRect::GaussRect()
 	{
 		SetQuadrature(quadrature_);
+	}
+	GaussRect::GaussRect(const Quadrature& quadrature)
+	{
+		SetQuadrature(quadrature);
 	}
 	const Index& GaussRect::GetIndex() const
 	{
@@ -157,9 +113,9 @@ namespace quadrature
 	{
 		return quadrature_;
 	}
-	void GaussRect::SetQuadrature(const Quadrature& value)
+	void GaussRect::SetQuadrature(const Quadrature& quadrature)
 	{
-		switch (value)
+		switch (quadrature)
 		{
 		case 1:
 			quadrature_ = 1;
@@ -208,35 +164,13 @@ namespace quadrature
 		}
 	}
 
-	GaussLinePtr CreateGaussLine(const Quadrature& value)
-	{
-		auto res = GaussLine::Create();
-
-		res->SetQuadrature(value);
-
-		return res;
-	}
-	GaussLinePtr GaussLine::Create()
-	{
-		class MakeSharedEnabler : public GaussLine
-		{
-		};
-
-		auto res = std::make_shared<MakeSharedEnabler>();
-
-		return res;
-	}
-	GaussLinePtr GaussLine::GetPtr()
-	{
-		return this->shared_from_this();
-	}
-	ConstGaussLinePtr GaussLine::GetPtr() const
-	{
-		return const_cast<GaussLine*>(this)->GetPtr();
-	}
 	GaussLine::GaussLine()
 	{
 		SetQuadrature(quadrature_);
+	}
+	GaussLine::GaussLine(const Quadrature& quadrature)
+	{
+		SetQuadrature(quadrature);
 	}
 	const Index& GaussLine::GetIndex() const
 	{
@@ -258,9 +192,9 @@ namespace quadrature
 	{
 		return quadrature_;
 	}
-	void GaussLine::SetQuadrature(const Quadrature& value)
+	void GaussLine::SetQuadrature(const Quadrature& quadrature)
 	{
-		switch (value)
+		switch (quadrature)
 		{
 		case 1:
 			quadrature_ = 1;

@@ -24,10 +24,6 @@ namespace quadrature
 	{
 		return this->shared_from_this();
 	}
-	ConstGaussHexaPtr GaussHexa::GetPtr() const
-	{
-		return const_cast<GaussHexa*>(this)->GetPtr();
-	}
 	GaussHexa::GaussHexa()
 	{
 		SetQuadrature(quadrature_);
@@ -129,10 +125,6 @@ namespace quadrature
 	{
 		return this->shared_from_this();
 	}
-	ConstGaussRectPtr GaussRect::GetPtr() const
-	{
-		return const_cast<GaussRect*>(this)->GetPtr();
-	}
 	GaussRect::GaussRect()
 	{
 		SetQuadrature(quadrature_);
@@ -229,10 +221,6 @@ namespace quadrature
 	GaussLinePtr GaussLine::GetPtr()
 	{
 		return this->shared_from_this();
-	}
-	ConstGaussLinePtr GaussLine::GetPtr() const
-	{
-		return const_cast<GaussLine*>(this)->GetPtr();
 	}
 	GaussLine::GaussLine()
 	{

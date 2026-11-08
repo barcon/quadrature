@@ -18,7 +18,6 @@ namespace quadrature
 
 	class IGauss;
 	using IGaussPtr = std::shared_ptr<IGauss>;
-	using ConstIGaussPtr = std::shared_ptr<const IGauss>;
 
 	class IGauss
 	{
@@ -38,7 +37,6 @@ namespace quadrature
 
 	class GaussHexa;
 	using GaussHexaPtr = std::shared_ptr<GaussHexa>;
-	using ConstGaussHexaPtr = std::shared_ptr<const GaussHexa>;
 
 	GaussHexaPtr CreateGaussHexa(const Quadrature& value);
 
@@ -49,7 +47,6 @@ namespace quadrature
 
 		static GaussHexaPtr Create();
 		GaussHexaPtr GetPtr();
-		ConstGaussHexaPtr GetPtr() const;
 
 		const Points& GetPoints() const override;
 		const Weights& GetWeights() const override;
@@ -74,7 +71,6 @@ namespace quadrature
 	//-----------------------------------------------------------------------------
 	class GaussRect;
 	using GaussRectPtr = std::shared_ptr<GaussRect>;
-	using ConstGaussRectPtr = std::shared_ptr<const GaussRect>;
 
 	GaussRectPtr CreateGaussRect(const Quadrature& value);
 
@@ -85,7 +81,6 @@ namespace quadrature
 
 		static GaussRectPtr Create();
 		GaussRectPtr GetPtr();
-		ConstGaussRectPtr GetPtr() const;
 
 		const Points& GetPoints() const override;
 		const Weights& GetWeights() const override;
@@ -110,7 +105,6 @@ namespace quadrature
 	//-----------------------------------------------------------------------------
 	class GaussLine;
 	using GaussLinePtr = std::shared_ptr<GaussLine>;
-	using ConstGaussLinePtr = std::shared_ptr<const GaussLine>;
 
 	GaussLinePtr CreateGaussLine(const Quadrature& value);
 
@@ -121,7 +115,6 @@ namespace quadrature
 
 		static GaussLinePtr Create();
 		GaussLinePtr GetPtr();
-		ConstGaussLinePtr GetPtr() const;
 
 		const Points& GetPoints() const override;
 		const Weights& GetWeights() const override;
